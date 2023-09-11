@@ -61,5 +61,12 @@
     "framer-motion": "^6",
     "react": "^17.0.2 || ^18",
     "react-dom": "^17.0.2 || ^18"
+  },
+  "dependencies": {
+    "@chakra-ui/system": ">=1.0.0",
+    "@storybook/addons": "6.x",
+    "prettier": ">=2.0.0",
+    "require-from-string": "^2.0.2",
+    "webpack": ">=2"
   }
 }

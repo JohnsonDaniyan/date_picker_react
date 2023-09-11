@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import {
   eachDayOfInterval,
   endOfMonth,
@@ -8,9 +9,10 @@ import {
   isWeekend,
   startOfMonth,
 } from 'date-fns'
+
 import { CalendarContext } from './context'
-import { MonthContext } from './month'
 import { CalendarDate } from './types'
+import { MonthContext } from './month'
 
 export type CalendarDayContext = {
   day: CalendarDate
@@ -29,12 +31,19 @@ export function useCalendarDay() {
     disablePastDates,
     disableWeekends,
     highlightToday,
+    highlightedDay,
   } = React.useContext(CalendarContext)
 
   const { day } = React.useContext(DayContext)
   const { month } = React.useContext(MonthContext)
 
-  let variant: 'selected' | 'range' | 'outside' | 'today' | undefined
+  let variant:
+    | 'selected'
+    | 'range'
+    | 'outside'
+    | 'today'
+    | 'highlighted'
+    | undefined
 
   if (highlightToday && isSameDay(new Date(), day)) {
     variant = 'today'
@@ -44,8 +53,14 @@ export function useCalendarDay() {
     (startSelectedDate && isSameDay(day, startSelectedDate)) ||
     (endSelectedDate && isSameDay(day, endSelectedDate))
 
+  const isHighlighted = highlightedDay && isSameDay(day, highlightedDay)
+
   if (isSelected) {
     variant = 'selected'
+  }
+
+  if (isHighlighted) {
+    variant = 'highlighted'
   }
 
   if (
