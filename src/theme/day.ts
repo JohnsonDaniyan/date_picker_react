@@ -48,7 +48,13 @@ export const CalendarDay: ComponentSingleStyleConfig = {
         },
       },
     },
-
+    highlighted:{
+      bgColor: 'pink.200',
+      color: 'white',
+      _hover: {
+        bgColor: 'pink.200',
+      },
+    },
     outside: {
       color: 'gray.300',
     },
