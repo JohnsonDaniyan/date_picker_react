@@ -76,10 +76,10 @@ export function Calendar({
   }, [value.start])
 
   const selectDateHandler = (date: CalendarDate) => {
-    if(highlightedDay){
-      return onSelectDate(highlightedDay)  
+    if (highlightedDay) {
+      return onSelectDate(highlightedDay)
     }
-    
+
     if (singleDateSelection) {
       return onSelectDate(date)
     }

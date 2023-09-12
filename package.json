@@ -1,12 +1,13 @@
 {
-  "name": "datepicker_custum",
-  "version": "1.2.0",
+  "name": "datepicker-custum",
+  "version": "1.3.0",
   "description": "A simple react datepicker build with chakra-ui and date-fns",
-  "main": "dist/datepicker_custum.cjs.js",
-  "module": "dist/datepicker_custum.esm.js",
-  "types": "dist/datepicker_custum.cjs.d.ts",
-  "repository": "git@github.com:JohnsonDaniyan/date_picker_react.git",
+  "main": "dist/uselessdev-datepicker.cjs.js",
+  "module": "dist/uselessdev-datepicker.esm.js",
+  "types": "dist/uselessdev-datepicker.cjs.d.ts",
+  "repository": "git@github.com:uselessdev/datepicker.git",
   "author": "Wallace Oliveira <wallacebatistaoliveira@gmail.com>",
+  "private": false,
   "files": [
     "dist"
   ],
@@ -59,12 +60,5 @@
     "framer-motion": "^6",
     "react": "^17.0.2 || ^18",
     "react-dom": "^17.0.2 || ^18"
-  },
-  "dependencies": {
-    "@chakra-ui/system": ">=1.0.0",
-    "@storybook/addons": "6.x",
-    "prettier": ">=2.0.0",
-    "require-from-string": "^2.0.2",
-    "webpack": ">=2"
   }
 }
