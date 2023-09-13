@@ -55,12 +55,12 @@ export function useCalendarDay() {
 
   const isHighlighted = highlightedDay && isSameDay(day, highlightedDay)
 
-  if (isSelected) {
-    variant = 'selected'
-  }
-
   if (isHighlighted) {
     variant = 'highlighted'
+  }
+
+  if (isSelected) {
+    variant = 'selected'
   }
 
   if (
@@ -83,8 +83,10 @@ export function useCalendarDay() {
     ? interval.some(date => isSameDay(day, date) && !isSelected)
     : false
 
-  if (isInRange && !isSelected) {
+  if (isInRange && !isSelected && !isHighlighted) {
     variant = 'range'
+  } else if (isInRange && isHighlighted) {
+    variant = 'highlighted'
   }
 
   const isDisabled =

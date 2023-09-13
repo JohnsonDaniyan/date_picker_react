@@ -13,9 +13,13 @@ export function CalendarDay({ children, ...props }: CalendarDay) {
 
   return (
     <Button
-      aria-current={variant === 'selected' || variant === 'highlighted'? 'date' : false}
+      aria-current={
+        variant === 'selected' || variant === 'highlighted' ? 'date' : false
+      }
       aria-label={format(day, 'MM-d')}
-      onClick={() => onSelectDates(day)}
+      onClick={() => {
+        onSelectDates(day)
+      }}
       isDisabled={isDisabled}
       sx={{ ...styles, ...props }}
       {...props}

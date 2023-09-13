@@ -65,7 +65,7 @@ export function Calendar({
   })
 
   const [target, setTarget] = React.useState<Target>(Target.START)
-
+  const [dt, setDt] = React.useState<CalendarDate|undefined>(highlightedDay)
   React.useEffect(() => {
     if (isValid(value.start)) {
       resetDate()
@@ -76,11 +76,8 @@ export function Calendar({
   }, [value.start])
 
   const selectDateHandler = (date: CalendarDate) => {
-    if (highlightedDay) {
-      return onSelectDate(highlightedDay)
-    }
-
     if (singleDateSelection) {
+      setDt(date)
       return onSelectDate(date)
     }
 
@@ -121,6 +118,7 @@ export function Calendar({
       value={{
         ...values,
         onSelectDates: selectDateHandler,
+        highlightedDay: dt,
         startSelectedDate: value?.start,
         endSelectedDate: value?.end,
         disableDates,
